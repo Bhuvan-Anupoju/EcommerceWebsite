@@ -4,6 +4,7 @@ function TrackingPage() {
   return (
     <>
       <title>Tracking</title>
+      <link rel="icon" type="image/svg+xml" href="tracking-favicon.png" />
       <div className="header">
         <div className="left-section">
           <a href="/" className="header-link">
