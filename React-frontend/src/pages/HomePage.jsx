@@ -7,9 +7,13 @@ import { useEffect, useState } from "react";
 
 export function HomePage() {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:3000/api/products").then((res) => {
       setProducts(res.data);
+    });
+    axios.get("http://localhost:3000/api/cart-items").then((res) => {
+      setCart(res.data);
     });
   }, []);
 
@@ -17,7 +21,7 @@ export function HomePage() {
     <>
       <title>Ecommerce website</title>
       <link rel="icon" type="image/svg+xml" href="home-favicon.png" />
-      <Header />
+      <Header cart={cart} />
       <div className="home-page">
         <div className="products-grid">
           {products.map((product) => {
