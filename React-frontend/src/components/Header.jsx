@@ -1,5 +1,5 @@
 import React from "react";
-import "./header.css";
+import "./Header.css";
 import { NavLink, useNavigate, useSearchParams } from "react-router";
 import { useState } from "react";
 export function Header({ cart }) {
